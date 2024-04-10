@@ -13,3 +13,12 @@
   width: 100%;
   height: 200px;
 }
+
+.filter{
+  margin: 30px auto 15px;
+}
+
+.filter p{
+  display: inline;
+  margin-right: 10px;
+}
