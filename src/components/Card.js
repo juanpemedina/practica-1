@@ -1,7 +1,7 @@
 export function Card({image, title, date}) {
     return(
       <div className='card'>
-        <img src={require("./images/"+image+".png")} alt='/'></img>
+        <img src={require("../images/"+image+".png")} alt='/'></img>
         <h2>{title}</h2>
         <p>{date}</p>
       </div>

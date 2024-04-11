@@ -1,23 +1,24 @@
 import './App.css';
-import {data} from './data';
-import { CardList } from './Card';
-import { useState } from 'react';
+import { Routes, Route, Link} from 'react-router-dom';
+import Home from './components/Home.js';
+import Contact from './components/Contact.js';
+import Blog from './components/Blog.js';
 
 function App() {
-  const [filterText, setFilterText] = useState('');
-
-  function handleChange(e) {
-    setFilterText(e.target.value);
-  }
-
   return (
     <div className="App">
-      <h1>Blog de Carros</h1>
-      <div className='filter'>
-        <p>Buscar por titulo</p>
-        <input type='text' value={filterText} onChange={handleChange}></input>
-      </div>
-      <CardList posts={data} text={filterText}></CardList>
+      <nav className='navbar'>
+          <Link to='/'>Home</Link>
+          <Link to='/blog'>Blog</Link>
+          <Link to='/contact'>Contact</Link>        
+      </nav>
+
+        <Routes>
+          <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/blog' element={<Blog></Blog>}></Route>
+          <Route path='/contact' element={<Contact></Contact>}></Route>
+
+        </Routes>
     </div>
   );
 }
