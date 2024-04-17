@@ -1,9 +1,16 @@
 import { data } from '../data.js';
 import { CardList } from './Card.js';
-import { useState } from'react';
+import { useEffect, useState } from'react';
 
 export default function Blog() {
     const [filterText, setFilterText] = useState('');
+    const [data, setData] = useState([{id: 0, title:"", image:"", date:"" , text:""}]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/post")
+      .then((res) => res.json())
+      .then((posts) => setData(posts));
+  }, []);
 
     function handleChange(e) {
       setFilterText(e.target.value);
