@@ -11,7 +11,7 @@ export function Card({image, title, date}) {
   export function CardList({posts, text}) {
     const lista = posts.map(post =>
         post.title.includes(text) &&          
-         <Card title={post.title} date={post.date} image={post.image} ></Card>)
+         <Card title={post.title} date={post.date} image={post.image} key={post.id}></Card>)
     return(
     <div className='card-list'>
       {lista}

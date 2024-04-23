@@ -1,10 +1,10 @@
-import { data } from '../data.js';
+//import { data } from '../data.js';
 import { CardList } from './Card.js';
 import { useEffect, useState } from'react';
 
 export default function Blog() {
     const [filterText, setFilterText] = useState('');
-    const [data, setData] = useState([{id: 0, title:"", image:"", date:"" , text:""}]);
+    const [data, setData] = useState([{id: 0, title:"", image:"", date:"" , text:"", id_author:""}]);
 
   useEffect(() => {
     fetch("http://localhost:8000/post")
